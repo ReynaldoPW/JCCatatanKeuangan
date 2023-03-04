@@ -51,10 +51,12 @@ public class TestAddTransaction {
     @Test(priority = 2)
     public void testAddExpenses(){
         addTransactionPage.addExpenseTransaction("15000","makan siang");
+        Assert.assertEquals(addTransactionPage.getTxtExpense(),"15.000");
     }
     @Test(priority = 3)
     public void testAddIncome(){
         addTransactionPage.addIncomeTransaction("100000","gaji bulanan");
+        Assert.assertEquals(addTransactionPage.getTxtIncome(),"100.000");
     }
     @AfterClass
     public void closeApp(){
