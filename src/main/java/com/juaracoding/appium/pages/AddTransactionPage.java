@@ -27,6 +27,9 @@ public class AddTransactionPage {
     @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.view.ViewGroup[2]/android.widget.RelativeLayout/androidx.drawerlayout.widget.DrawerLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.TextView[1]")
     private MobileElement txtIncome;
 
+    @AndroidFindBy(id = "com.chad.financialrecord:id/tvBalance")
+    private MobileElement txtBalance;
+
     @AndroidFindBy(id="com.chad.financialrecord:id/fabMenu")
     private MobileElement btnMenu;
 
@@ -51,6 +54,7 @@ public class AddTransactionPage {
     public String getTxtIncome(){
         return txtIncome.getText();
     }
+    public String getTxtBalance(){return txtBalance.getText();}
     public void addIncomeTransaction(String amount, String note) {
         btnMenu.click();
         btnIncome.click();

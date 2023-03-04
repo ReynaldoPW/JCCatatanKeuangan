@@ -52,11 +52,15 @@ public class TestAddTransaction {
     public void testAddExpenses(){
         addTransactionPage.addExpenseTransaction("15000","makan siang");
         Assert.assertEquals(addTransactionPage.getTxtExpense(),"15.000");
+        Assert.assertEquals(addTransactionPage.getTxtBalance(),"-15.000");
+        System.out.println("saldo anda adalah : "+addTransactionPage.getTxtBalance());
     }
     @Test(priority = 3)
     public void testAddIncome(){
         addTransactionPage.addIncomeTransaction("100000","gaji bulanan");
         Assert.assertEquals(addTransactionPage.getTxtIncome(),"100.000");
+        Assert.assertEquals(addTransactionPage.getTxtBalance(),"85.000");
+        System.out.println("saldo anda adalah : "+addTransactionPage.getTxtBalance());
     }
     @AfterClass
     public void closeApp(){
